@@ -74,6 +74,7 @@ class CampusViewController: UIViewController, CLLocationManagerDelegate {
         let region = MKCoordinateRegion.init(center: campus.midCoordinate, span: span)
         
         mapView.region = region
+        mapView.showsUserLocation = true
         if ( CLLocationManager.authorizationStatus() == .notDetermined){
             locationManager.requestWhenInUseAuthorization()
             //locationManager.requestAlwaysAuthorization()
@@ -136,13 +137,13 @@ class CampusViewController: UIViewController, CLLocationManagerDelegate {
             mapView.addAnnotation(annotation)
         }
         
-        let coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(32.119572), CLLocationDegrees(118.958368))
+    /*    let coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(32.119572), CLLocationDegrees(118.958368))
         let title = "我的位置"
         let type:POIType = .misc
         let subtitle = "这里"
         let annotation = POIAnnotation(coordinate: coordinate, title: title, subtitle: subtitle, type: type)
         mapView.addAnnotation(annotation)
-        
+    */
     }
     
     @IBAction func mapTypeChanged(_ sender: UISegmentedControl) {
